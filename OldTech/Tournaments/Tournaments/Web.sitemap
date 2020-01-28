@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx" title="Home">
+    <siteMapNode url="~/Players.aspx" title="Players" />
+    <siteMapNode url="~/Teams.aspx" title="Teams" />
+    <siteMapNode url="~/Tournaments.aspx" title="Tournaments" />
+    <siteMapNode url="~/TeamManager.aspx" title="TeamManager" />
+    <siteMapNode url="~/Sponsors.aspx" title="Sponsors" />
+    <siteMapNode url="~/About.aspx" title="About" />
+    <siteMapNode url="~/Contact.aspx" title="Contact" />
+  </siteMapNode>
+</siteMap>

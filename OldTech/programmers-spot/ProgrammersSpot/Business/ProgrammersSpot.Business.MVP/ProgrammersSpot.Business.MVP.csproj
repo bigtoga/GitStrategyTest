@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{07C56E35-9FE4-4700-B115-09C3238AAC79}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProgrammersSpot.Business.MVP</RootNamespace>
+    <AssemblyName>ProgrammersSpot.Business.MVP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bytes2you.Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a7d501dd757e0442, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Args\EditFirmInfoEventArgs.cs" />
+    <Compile Include="Args\EditUserInfoEventArgs.cs" />
+    <Compile Include="Args\FirmReviewEventArgs.cs" />
+    <Compile Include="Args\SocialLoginEventArgs.cs" />
+    <Compile Include="Args\ManageUserProfileEventArgs.cs" />
+    <Compile Include="Args\FormGetItemEventArgs.cs" />
+    <Compile Include="Args\FindUserEventArgs.cs" />
+    <Compile Include="Args\ImageCommentEventArgs.cs" />
+    <Compile Include="Args\OwinCtxEventArgs.cs" />
+    <Compile Include="Args\RegistrationEventArgs.cs" />
+    <Compile Include="Args\SearchEventArgs.cs" />
+    <Compile Include="Args\StarUserEventArgs.cs" />
+    <Compile Include="Args\UpdateFirmEventArgs.cs" />
+    <Compile Include="Args\UploadImageEventArgs.cs" />
+    <Compile Include="Args\UploadProfilePicEventArgs.cs" />
+    <Compile Include="Args\UserUploadImageEventArgs.cs" />
+    <Compile Include="Presenters\FirmDetailsPresenter.cs" />
+    <Compile Include="Presenters\FirmsPresenter.cs" />
+    <Compile Include="Presenters\ExternalRegistrationPresenter.cs" />
+    <Compile Include="Presenters\ImageDetailsPresenter.cs" />
+    <Compile Include="Presenters\ManageCompaniesPresenter.cs" />
+    <Compile Include="Presenters\ManageUserProfilePresenter.cs" />
+    <Compile Include="Presenters\ProgrammerDetailsPresenter.cs" />
+    <Compile Include="Presenters\ProgrammersPresenter.cs" />
+    <Compile Include="Presenters\RegistrationPresenter.cs" />
+    <Compile Include="Presenters\TakeABreakPresenter.cs" />
+    <Compile Include="Presenters\UploadImagePresenter.cs" />
+    <Compile Include="Presenters\UploadProfilePicPresenter.cs" />
+    <Compile Include="Presenters\UserProfilePresenter.cs" />
+    <Compile Include="Presenters\UserUploadImagePresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\FirmDetailsViewModel.cs" />
+    <Compile Include="ViewModels\FirmsViewModel.cs" />
+    <Compile Include="ViewModels\ExternalRegistrationViewModel.cs" />
+    <Compile Include="ViewModels\ImageDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ManageCompaniesViewModel.cs" />
+    <Compile Include="ViewModels\ManageUserProfileViewModel.cs" />
+    <Compile Include="ViewModels\ProgrammerDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ProgrammersViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\TakeABreakViewModel.cs" />
+    <Compile Include="ViewModels\UploadImageViewModel.cs" />
+    <Compile Include="Views\IFirmDetailsView.cs" />
+    <Compile Include="Views\IFirmsView.cs" />
+    <Compile Include="Views\IExternalRegistrationView.cs" />
+    <Compile Include="Views\IImageDetailsView.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="Views\IManageCompaniesView.cs" />
+    <Compile Include="Views\IManageUserProfileView.cs" />
+    <Compile Include="Views\IProgrammerDetailsView.cs" />
+    <Compile Include="Views\IProgrammersView.cs" />
+    <Compile Include="Views\IRegistrationView.cs" />
+    <Compile Include="Views\ITakeABreakView.cs" />
+    <Compile Include="Views\IUploadProfilePicView.cs" />
+    <Compile Include="Views\IUserProfileView.cs" />
+    <Compile Include="Views\IUploadImageView.cs" />
+    <Compile Include="Views\IUserUploadImageView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProgrammersSport.Models\ProgrammersSpot.Business.Models.csproj">
+      <Project>{c4b33a7f-213d-4713-afc8-7b3e29b8aa3d}</Project>
+      <Name>ProgrammersSpot.Business.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProgrammersSpot.Business.Common\ProgrammersSpot.Business.Common.csproj">
+      <Project>{59aa86b4-6a88-4fc0-96ca-c4ac22ac12b3}</Project>
+      <Name>ProgrammersSpot.Business.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProgrammersSpot.Business.Identity\ProgrammersSpot.Business.Identity.csproj">
+      <Project>{AF9FC757-FDB2-4880-BE24-1D1353254EC9}</Project>
+      <Name>ProgrammersSpot.Business.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProgrammersSpot.Business.Services\ProgrammersSpot.Business.Services.csproj">
+      <Project>{D81AD7CA-7F30-4467-ACFE-7D4DE5EC2562}</Project>
+      <Name>ProgrammersSpot.Business.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
