@@ -27,3 +27,6 @@ Until the first full release, Blazor will always require the newest **preview** 
 | [Session #8](/docs/08-templated-components.md) | Create and use components with template parameters |
 | [Session #9](/docs/09-progressive-web-app.md) | Progressive Web App (PWA) features |
 | [Session #10](/docs/10-publish-and-deploy.md) | Deploy your app to Azure |
+
+
+Team A Dev 2 changed in FB2
