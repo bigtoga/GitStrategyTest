@@ -1,0 +1,220 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Platform>AnyCPU</Platform>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RootNamespace>Microsoft.Azure.Cosmos</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Query\TestBaseline\**" />
+    <EmbeddedResource Remove="Query\TestBaseline\**" />
+    <None Remove="Query\TestBaseline\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="BaselineTest\TestBaseline\CosmosDiagnosticsSerializerTests.TestPointOperationStatistics.xml" />
+    <None Remove="BaselineTest\TestBaseline\CosmosDiagnosticsSerializerTests.TestQueryAggregateDiagnostics.xml" />
+    <None Remove="BaselineTest\TestBaseline\QueryPartitionProviderTest - Copy (2).Top.xml" />
+    <None Remove="BaselineTest\TestBaseline\QueryPartitionProviderTest - Copy.Top.xml" />
+    <None Remove="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlBinaryScalarOperators.xml" />
+    <None Remove="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlFunctionCalls.xml" />
+    <None Remove="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlLiteral.xml" />
+    <None Remove="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlQueries.xml" />
+    <None Remove="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlScalarExpression.xml" />
+    <None Remove="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlUnaryScalarOperators.xml" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(ProjectRef)' != 'True' ">
+    <PackageReference Include="Microsoft.Azure.Cosmos.Direct" Version="[$(DirectVersion)]" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Azure.Cosmos.Serialization.HybridRow" Version="[$(HybridRowVersion)]" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Moq" Version="4.8.3" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Microsoft.Azure.Cosmos.csproj" />
+  </ItemGroup>  
+
+  <ItemGroup Condition="$(OS) != 'Linux' AND '$(ProjectRef)' != 'True' ">
+    <None Include="$(NugetPackageRoot)\Microsoft.Azure.Cosmos.Serialization.HybridRow\$(HybridRowVersion)\microsoft.azure.cosmos.serialization.hybridrow.nuspec">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(NugetPackageRoot)\Microsoft.Azure.Cosmos.Direct\$(DirectVersion)\Microsoft.Azure.Cosmos.Direct.nuspec">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\src\Microsoft.Azure.Cosmos.csproj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="testbaseline.cmd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DotNetSDKAPI.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="BaselineTest\TestBaseline\PipelineContinuationTokenTests.Tests.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Routing\resources\BaselineTest.PartitionRoutingHelper.AddFormattedContinuationToHeader.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Routing\resources\BaselineTest.PartitionRoutingHelper.ExtractPartitionKeyRangeFromHeaders.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Routing\resources\BaselineTest.PartitionRoutingHelper.GetPartitionRoutingInfo.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Routing\resources\BaselineTest.PathParser.Extra.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Routing\resources\BaselineTest.PathParser.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestDocuments\MyTest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestDocuments\MyTest2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testhost.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\CombinedScriptsData.Json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\countries\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\devtestcoll.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\lastfm\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\LogData.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\MillionSong1KDocuments.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\MsnCollection.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\NutritionData\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\runsCollection\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\states_committees.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\states_legislators\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\store01C.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\TicinoErrorBuckets\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\twitter_data\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\ups1\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestJsons\XpertEvents\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="BaselineTest\TestBaseline\CosmosDiagnosticsSerializerTests.TestQueryAggregateDiagnostics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.Aggregates.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.Basic.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.Bugs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.Distinct.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.ManyRanges.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.MultipleKeys.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.Negative.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.OrderBy.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.PointRange.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.RangePartitionKey.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.Subqueries.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\QueryPartitionProviderTest.Top.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\CosmosDiagnosticsSerializerTests.TestPointOperationStatistics.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlBinaryScalarOperators.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlFunctionCalls.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlLiteral.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlQueries.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlScalarExpression.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaselineTest\TestBaseline\SqlObjectVisitorBaselineTests.SqlUnaryScalarOperators.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>..\..\..\testkey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  
+</Project>
+
